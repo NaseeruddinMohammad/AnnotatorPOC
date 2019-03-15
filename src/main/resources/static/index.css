@@ -1,0 +1,179 @@
+* {
+	box-sizing: border-box
+}
+
+#container {
+	overflow: auto;
+	font-family: sans-serif;
+	float: left;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+	width: 80%;
+	height: 100%;
+	padding: 10px;
+	text-align: left !important;
+}
+
+#filesList {
+	font-family: sans-serif;
+	float: left;
+	font-size: 16px;
+	width: 20%;
+	margin-top: 30px;
+	height: 100%;
+	padding: 5px;
+	background-color: #f1f1f1;
+}
+/*.afteroverlay {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 70%;
+    position: absolute;
+    height: 100%;
+}*/
+#result {
+	float: left;
+	padding: 0px 12px;
+	border: 1px solid #ccc;
+	width: 10%;
+	border-left: none;
+	height: 100%;
+}
+
+#updateresult {
+	position: fixed; /* Sit on top of the page content */
+	display: none; /* Hidden by default */
+	width: 20%; /* Full width (cover the whole page) */
+	height: 100%; /* Full height (cover the whole page) */
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 1);
+	/* Black background with opacity */
+	z-index: 2;
+	/* Specify a stack order in case you're using a different order for other elements */
+	padding: 10px;
+	color: black;
+	font-size: 18px;
+}
+
+#updateresult #selcontent {
+	font-size: 18px;
+	color: black;
+	font-family: sans-serif;
+	padding: 10px;
+}
+
+#updateresult #title {
+	background: cadetblue;
+	font-size: 20px;
+	font-family: none;
+	color: black;
+	padding: 10px;
+	align-content: center;
+	align-self: center;
+}
+
+pre {
+	overflow: none !important;
+}
+
+.scrollbar {
+	margin-left: 30px;
+	float: left;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+
+.force-overflow {
+	min-height: 25px;
+}
+
+.scrollbar-primary {
+	width: 320;
+	background-color: #F5F5F5;
+	height: 100%;
+}
+
+.loading {
+	display: block;
+	margin: 0 auto;
+}
+
+.scrollbar-secondary {
+	width: 320;
+	background-color: #F5F5F5;
+	height: 400px;
+	margin: 0px;
+}
+
+#valuesAdded {
+	padding: 25px;
+	margin-top: -14px;
+}
+
+.headerTag {
+	font-weight: bold;
+	background-color: #cfd1d0;
+	color: Black;
+}
+
+.vitalsTag {
+	font-weight: bold;
+	background-color: #bedd75;
+	color: Black;
+}
+
+.medsTag {
+	font-weight: bold;
+	background-color: #d9f9f7;
+	color: Black;
+}
+
+.labsTag {
+	font-weight: bold;
+	background-color: #f2cec1;
+	color: Black;
+}
+
+.hxprocTag {
+	font-weight: bold;
+	background-color: #edbde0;
+	color: white;
+}
+
+.posprocTag {
+	font-weight: bold;
+	background-color: #edbde0;
+	color: Black;
+}
+
+.negTag {
+	font-weight: bold;
+	background-color: white;
+	color: Red;
+	text-decoration: underline;
+}
+
+.posTag {
+	font-weight: bold;
+	background-color: white;
+	color: green;
+	text-decoration: underline;
+}
+
+.hxTag {
+	font-weight: bold;
+	background-color: white;
+	color: limegreen;
+	text-decoration: underline;
+}
+
+.suspectTag {
+	font-weight: bold;
+	background-color: White;
+	color: #770501;
+	text-decoration: underline;
+}
