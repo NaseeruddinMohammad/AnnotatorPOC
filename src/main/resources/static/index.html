@@ -1,0 +1,121 @@
+<html>
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body onload="loadFls()">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<script src="index.js"></script>
+	<div id="left">
+		<div id="scroll" class="scrollbar scrollbar-primary">
+			<div class="text-center force-overflow"></div>
+			<div class="container" id="filesList" style="display: block;"></div>
+		</div>
+	</div>
+	<div id="container" contentEditable="false"
+		onMouseUp="selectionContent()"></div>
+	<button id="msg" class="loading" style="display: none;">
+		<i class="fa fa-spinner fa-spin"></i>Loading
+	</button>
+	<div class="container">
+		<div class="modal fade" id="myModal1" data-backdrop="static" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4>Update Info</h4>
+						<button type="button" class="close" data-dismiss="modal"
+							onclick="closePopUp()">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div>
+							Selected Conent:
+							<div class="border" id="selcontent"></div>
+						</div>
+						<div id="types1">
+							<div>Type:</div>
+							<input type="radio" id="heading" name="type" value="Heading"
+								checked="checked" onclick="OnChangeRadio (this)">Heading
+							<input type="radio" id="dx" name="type" value="Dx"
+								onclick="OnChangeRadio (this)">Dx <input type="radio"
+								id="proc" name="type" value="Procedure"
+								onclick="OnChangeRadio (this)">Procedure <input
+								type="radio" id="meds" name="type" value="Medications"
+								onclick="OnChangeRadio (this)">Medications <input
+								type="radio" id="labs" name="type" value="Labs"
+								onclick="OnChangeRadio (this)">Labs <input type="radio"
+								id="vital" name="type" value="Vitals"
+								onclick="OnChangeRadio (this)">Vitals
+						</div>
+						<div id="finding_types1" style="display: none;">
+							<div>Finding Type</div>
+							<input type="radio" id="find_positive" name="finding_types"
+								value="find_positive" checked="checked">Positive <input
+								type="radio" id="find_negative" name="finding_types"
+								value="find_negative">Negative <input type="radio"
+								id="find_suspect" name="finding_types" value="find_suspect">Suspect
+						</div>
+						<div id="history_types1" style="display: none;">
+							<div>History Type</div>
+							<input type="radio" id="hist_yes1" name="history_types"
+								value="hist_yes" checked="checked">Yes <input
+								type="radio" id="hist_no1" name="history_types" value="hist_no">No
+						</div>
+						<div id="reviewer">
+							<div>Auditor</div>
+							<div>
+								<input type="radio" id="sireesha" name="reviewer1"
+									value="Sireesha" checked="checked"> Sireesha <input
+									type="radio" id="srinivas" name="reviewer1" value="Srinivas">
+								Srinivas
+							</div>
+						</div>
+						<input type="button" class="btn btn-info btn-sm mr-1"
+							name="submit" data-dismiss="modal" value="save/update"
+							onclick="closePopUp()" /> <input type="button"
+							class="btn btn-info btn-sm" name="remove" data-dismiss="modal"
+							value="delete" onclick="closePopUp()" />
+					</div>
+					<div class="modal-footer">
+						<button id="closeModal" type="button" class="btn btn-default"
+							data-dismiss="modal" onclick="closePopUp()">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container" id="updateresult">
+		<div id="file_name"></div>
+		<button id="msgAdded" class="loading" style="display: none;">
+			<i class="fa fa-spinner fa-spin"></i>Loading
+		</button>
+		<div class="row" id="showAdded" style="display: none;">
+			<div class="col">
+				<h5>Additions:</h5>
+				<div>
+					<div id="scroll" class="scrollbar scrollbar-secondary">
+						<ul id="valuesAdded"></ul>
+					</div>
+				</div>
+			</div>
+			<div class="col" id="showRemoved" style="display: none;">
+				<h5>Deletions:</h5>
+				<div>
+					<div id="scroll" class="scrollbar scrollbar-secondary">
+						<ul id="valuesRemoved"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
