@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax Call After Page Load</title>
+</head>
+<body>
+	<h1>Content</h1>
+	<!-- Content is blank by default -->
+	<div id="content"></div>
+	<div id="items"></div>
+	<!-- Include the JQuery library -->
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+        //When the page has loaded.
+        $( document ).ready(function(){
+            //Perform Ajax request.
+            $.ajax({
+                url: '/files',
+                type: 'get',
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                    var i, html;
+                    <!--html  = '<ul>';-->
+                    for (i = 0; i < data.length; i++) {
+                        console.log(data[i]);
+                        html += '<a href=#>' + data[i]['fileName'] + '</a>';
+                    }
+                    <!--html += '</ul>';-->
+                    $("#items").html(html);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    var errorMsg = 'Ajax request failed: ' + xhr.responseText;
+                    $('#content').html(errorMsg);
+                  }
+            });
+        });
+        </script>
+</body>
+</html>
